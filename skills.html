@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            background: black;
+
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 35px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all .50 ease;
+        }
+
+        .li-list {
+            display: flex;
+        }
+
+        .li-list a {
+            display: inline-block;
+            margin: 0 35px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all.6s ease;
+        }
+
+        .li-list a:hover {
+            color: chocolate;
+        }
+
+        .skills {
+            min-height: auto;
+            padding-top: 10rem;
+            background: rgb(0, 0, 0);
+        }
+
+        .skills-row .skills-column {
+            flex: 1 1 40rem;
+        }
+
+        .skills-box .skills-content {
+            position: relative;
+            border: .2rem solid rgb(255, 255, 255);
+            border-radius: .6rem;
+            padding: .5rem 1.5rem;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .skills-box .skills-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: #240046;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .skills-box .skills-content:hover::before {
+            width: 100%;
+        }
+
+        .skills-content .progress {
+            padding: 1rem 0;
+        }
+
+        .skills-content .progress h3 {
+            font-size: 1.7rem;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .skills-content .progress h3 span {
+            color: rgb(255, 255, 255);
+        }
+
+        .skills-content .progress .bar {
+            height: 2.5rem;
+            border-radius: .6rem;
+            border: .2rem solid white;
+            padding: .5rem;
+            margin: 1rem 0;
+        }
+
+        .skills-content .progress .bar span {
+            display: block;
+            height: 100%;
+            border-radius: .3rem;
+            background: #5a189a;
+        }
+
+        .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
+            width: 25%;
+            animation-delay: 0.2s;
+        }
+
+        .skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
+            width: 25%;
+            animation-delay: 0.4s;
+        }
+
+        .skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
+            width: 50%;
+            animation-delay: 0.8s;
+        }
+
+        @keyframes fillBar {
+            0% {
+                width: 0;
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .skills-content .progress .bar span {
+            display: block;
+            height: 100%;
+            border-radius: .3rem;
+            background: #5a189a;
+            opacity: 0;
+            animation: fillBar 2s ease forwards;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="image/RAFAEL.png" alt="">
+        </a>
+
+        <ul class="li-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="bx-bxmenu" id="menu-icon"> </div>
+    </header>
+
+    <section class="skills" id="skills" data-aos="zoom-in" dats-aos-duration="1400">
+
+        <div class="skills-row">
+            <div class="skills-column">
+                <h3 class="title">Coding Skills</h3>
+
+                <div class="skills-box">
+                    <div class="skills-content">
+                        <div class="progress">
+                            <h3>Photoshop <span>25%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Photo Manipulation <span>25%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+
+                        <div class="progress">
+                            <h3>Graphics Design <span>50%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Rafael Madrid</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            background: black;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 35px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all .50s ease;
+            background-color: black;
+        }
+
+        .li-list {
+            display: flex;
+        }
+
+        .li-list a {
+            display: inline-block;
+            margin: 0 35px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.6s ease;
+        }
+
+        .li-list a:hover {
+            color: chocolate;
+        }
+
+        .contact-box {
+            max-width: 500px;
+            width: 90%;
+            margin: 150px auto;
+            padding: 40px;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: #1a1a1a;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-box h1 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: chocolate;
+        }
+
+        .contact-box p {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-box a {
+            color: #00acee;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="image/RAFAEL.png" alt="">
+        </a>
+
+        <ul class="li-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="bx-bxmenu" id="menu-icon"> </div>
+    </header>
+
+    <div class="contact-box" data-aos="fade-up">
+        <h1>Rafael Van A. Madrid</h1>
+        <p>📧 Email: <a href="mailto:rafaelmadrid@email.com">rafaelmadrid@email.com</a></p>
+        <p>📘 Facebook: <a href="https://facebook.com/rafaelmadrid" target="_blank">facebook.com/rafaelmadrid</a></p>
+        <p>📷 Instagram: <a href="https://instagram.com/rafaelmadrid" target="_blank">@rafaelmadrid</a></p>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

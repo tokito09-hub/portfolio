@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        body {
+            background: black;
+            overflow: hidden;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 35px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.5s ease;
+        }
+
+        .li-list {
+            display: flex;
+        }
+
+        .li-list a {
+            display: inline-block;
+            margin: 0 35px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.6s ease;
+        }
+
+        .li-list a:hover {
+            color: chocolate;
+        }
+
+        section {
+            margin-left: 10%;
+        }
+
+        .about {
+            color: white;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 2rem;
+            padding: 0 5%;
+        }
+
+        .about-content h1 {
+            font-size: 45px;
+            font-weight: 900;
+            margin: 15px 0;
+        }
+
+        .about-content p {
+            max-width: 620px;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 32px;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 32px;
+            background-color: #5a189a;
+            border: 2px solid transparent;
+            border-radius: 7px;
+            color: #fff;
+            font-weight: 500;
+            transition: all 0.6s ease;
+            margin-right: 20px;
+        }
+
+        .button:hover {
+            background-color: #fff;
+            color: black;
+        }
+
+        .about-img img {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="image/RAFAEL.png" alt="Logo">
+        </a>
+
+        <ul class="li-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="bx-bxmenu" id="menu-icon"></div>
+    </header>
+
+    <section class="about" id="about">
+
+        <div class="about-content">
+            <h1 data-aos="fade-right" data-aos-duration="1400">Graphics Designer</h1>
+            <p data-aos="fade-right" data-aos-duration="1400">
+                Hi, I'm Rafael Van A. Madrid, a passionate graphic designer currently looking for a job or part-time job opportunity
+                where I can apply my creativity, and solid design skills to a team that values visual impact.
+                If you know anyone hiring or have leads—let’s connect! 🙌
+            </p>
+
+            <div class="main-shekrek">
+                <a href="#" class="button" onclick="showMessage()">Read More</a>
+            </div>
+
+            <p id="hiddenMessage" style="display: none; font-size: 20px; margin-top: 20px;">
+                <span style="color: green;">//happiness</span> <br>
+                <span style="color: violet;">when</span> <span style="color: aqua;">(your.code)</span> <br> { <br>
+                <span style="color: rgb(255, 94, 0);">runs.without</span> <span style="color: aqua;">();</span> <br>
+                <span style="color: rgb(255, 94, 0);">errors</span> <span style="color: aqua;">();</span> <br> } <br> <br>
+
+                And i am also a programmer not 100% but i create this portfolio to find a job or part-time job to gain
+                more experience.
+            </p>
+        </div>
+
+        <div class="about-img">
+            <img src="image/raf.jpg" alt="">
+
+        </div>
+
+    </section>
+
+    <script>
+        function showMessage() {
+            const message = document.getElementById("hiddenMessage");
+            message.style.display = message.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</body>
+
+</html>

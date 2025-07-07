@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background: black;
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 35px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .50 ease;
+}
+
+.li-list {
+    display: flex;
+}
+
+.li-list a {
+    display: inline-block;
+    margin: 0 35px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all.6s ease;
+}
+
+.li-list a:hover {
+    color: chocolate;
+}
+
+section {
+    padding: 0 14%;
+}
+
+.shekrek {
+    color: white;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+.shekrek-img img {
+    width: 100%;
+    margin-top: 120px;
+    margin-left: 100px;
+}
+
+.shekrek-orlok h1 {
+    font-size: 80px;
+    font-weight: 900;
+    margin: 15ox 0;
+}
+
+.shekrek-orlok h5 {
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.shekrek-orlok p {
+    width: 100%;
+    max-width: 620px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 32px;
+    background-color: #5a189a;
+    border: 2px solid transparent;
+    border-radius: 7px;
+    color: #fff;
+    font-weight: 500;
+    transition: all .6s ease;
+    margin-right: 20px;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.button::before,
+.button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    z-index: -1;
+}
+
+.button::before {
+    left: -125px;
+    background: #240046;
+}
+
+.button::after {
+    right: -125px;
+    background: #5a189a;
+}
+
+.button:hover::before,
+.button:hover::after {
+    width: 60%;
+}
+
+
+.icons {
+    position: absolute;
+    top: 50%;
+    padding: 0 7%;
+    transform: transLateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 35px 0;
+    color: #fff;
+    font-size: 23px;
+    transition: all.6s ease;
+}
+
+.icons i:hover {
+    transform: transLateY(-5px);
+    color: #5a189a;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+      list-style: none;
+      text-decoration: none;
+    }
+
+    body {
+      background: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 35px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.5s ease;
+      background-color: black;
+    }
+
+
+    .li-list {
+      display: flex;
+    }
+
+    .li-list a {
+      display: inline-block;
+      margin: 0 35px;
+      color: #fff;
+      font-size: 1rem;
+      transition: all 0.6s ease;
+    }
+
+    .li-list a:hover {
+      color: chocolate;
+    }
+
+    .scroller {
+      max-width: 1700px;
+      width: 100%;
+      margin: 300px auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+
+    .scroller_inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-block: 20px;
+    }
+
+    .scroller_inner img {
+      max-width: 600px;
+      max-height: 400px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .scroller_inner .wan {
+      width: 600px;
+      height: 400px;
+    }
+
+    .scroller[data-animated="true"] {
+      overflow: hidden;
+      mask: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
+      -webkit-mask: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
+    }
+
+    .scroller[data-animated="true"] .scroller_inner {
+      width: max-content;
+      flex-wrap: nowrap;
+      animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+    }
+
+    .scroller[data-direction="right"] {
+      --_animation-direction: reverse;
+    }
+
+    .scroller[data-speed="slow"] {
+      --_animation-duration: 40s;
+    }
+
+    @keyframes scroll {
+      to {
+        transform: translateX(calc(-50% - 10px));
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img src="image/RAFAEL.png" alt="Logo" />
+    </a>
+
+    <ul class="li-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="bx-bxmenu" id="menu-icon"></div>
+  </header>
+
+  <div class="scroller" data-direction="left" data-speed="slow">
+    <div class="scroller_inner">
+      <img src="image/2.jpg" alt="">
+      <img src="image/6.jpg" alt="">
+      <img src="image/burger.png" alt="" class="original-size">
+      <img src="image/royal soda.png" alt="" class="original-size">
+      <img src="image/porsche.png" alt="" class="original-size">
+      <img src="image/PUBMMATS Multimedia.png" alt="" class="wan">
+
+    </div>
+  </div>
+
+  <script>
+    const scrollers = document.querySelectorAll('.scroller');
+
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      addAnimation();
+    }
+
+    function addAnimation() {
+      scrollers.forEach((scroller) => {
+        scroller.setAttribute("data-animated", true);
+
+        const scrollerInner = scroller.querySelector('.scroller_inner');
+        const scrollerContent = Array.from(scrollerInner.children);
+
+        scrollerContent.forEach(item => {
+          const duplicatedItem = item.cloneNode(true);
+          duplicatedItem.setAttribute('aria-hidden', true);
+          scrollerInner.appendChild(duplicatedItem);
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>
